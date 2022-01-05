@@ -8,7 +8,7 @@
 <body>
 	Welcome ${user.name} !
 	<c:if test="${empty user}">
-		<c:redirect url="/login" />
+	<jsp:forward page="/login"></jsp:forward>
 	</c:if>
 	<c:choose>
 		<c:when test="${user.type eq 'Manager'}">

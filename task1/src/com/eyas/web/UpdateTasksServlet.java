@@ -19,15 +19,25 @@ import com.eyas.model.TaskBean;
 public class UpdateTasksServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doPost(req, resp);
+		resp.setHeader("Cache-Control","no-cache"); //HTTP 1.1
+		resp.setHeader("Pragma","no-cache"); //HTTP 1.0
+		resp.setDateHeader ("Expires", 0);
+		
+		String destination = "/view_tasks";
+		RequestDispatcher view = req.getRequestDispatcher(destination);
+		view.forward(req, resp);
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
+			resp.setHeader("Cache-Control","no-cache"); //HTTP 1.1
+			resp.setHeader("Pragma","no-cache"); //HTTP 1.0
+			resp.setDateHeader ("Expires", 0);
+			
 			HttpSession session = req.getSession();
 			ArrayList<TaskBean> tasks = null;
 			resp.setContentType("text/html");
-			String destination = "viewTasks.jsp";
+			String destination = "/view_tasks";
 			EmployeeBean user = ((EmployeeBean) (session.getAttribute("user")));
 			if (user == null) {
 				RequestDispatcher view = req.getRequestDispatcher("login.jsp");

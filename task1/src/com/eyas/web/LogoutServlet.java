@@ -19,7 +19,7 @@ public class LogoutServlet extends HttpServlet {
 		if (session != null) // If session is not null
 		{
 			resp.setContentType("text/html");
-			String destination = "login.jsp";
+			String destination = "index.jsp";
 			session.invalidate(); // removes all session attributes bound to the session
 			String message = "You Have Logged Out Successfully ";
 			req.setAttribute("message", message);
