@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache
+Software Foundation//DTD Tiles Configuration 1.1//EN"
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+
+	<definition name="layoutDef" page="/Layout.jsp">
+		<put name="header" value="/header.jsp" />
+		<put name="body" type="string" />
+		<put name="footer" value="/footer.jsp" />
+	</definition>
+
+	<definition name="indexDef" extends="layoutDef">
+		<put name="title" type="string" value="HomePage" />
+		<put name="body" value="/indexBody.jsp" />
+	</definition>
+
+	<definition name="loginDef" extends="layoutDef">
+		<put name="title" type="string" value="Login Page" />
+		<put name="body" value="/loginBody.jsp" />
+	</definition>
+
+	<definition name="createEmpDef" extends="layoutDef">
+		<put name="title" type="string" value="Create Employee" />
+		<put name="body" value="/createEmployeeBody.jsp" />
+	</definition>
+
+	<definition name="createTskDef" extends="layoutDef">
+		<put name="title" type="string" value="Create Task" />
+		<put name="body" value="/createTaskBody.jsp" />
+	</definition>
+
+	<definition name="viewEmpDef" extends="layoutDef">
+		<put name="title" type="string" value="view Employees" />
+		<put name="body" value="/viewEmployeesBody.jsp" />
+	</definition>
+
+	<definition name="viewTskDef" extends="layoutDef">
+		<put name="title" type="string" value="view Tasks" />
+		<put name="body" value="/viewTasksBody.jsp" />
+	</definition>
+</tiles-definitions>
